@@ -36,6 +36,19 @@
             background: rgba(10, 10, 10, 0.98);
             box-shadow: 0 2px 20px rgba(255, 107, 0, 0.1);
         }
+@media (max-width: 768px) {
+    .nav-links.show {
+        display: flex;
+        flex-direction: column;
+        background: rgba(10, 10, 10, 0.95);
+        position: absolute;
+        top: 70px; /* adjust as per your header height */
+        right: 0;
+        left: 0;
+        padding: 1rem 2rem;
+        z-index: 999;
+    }
+}
 
         nav {
             display: flex;
@@ -120,15 +133,18 @@
         }
 
         /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-            position: relative;
-            overflow: hidden;
-        }
+      .hero {
+    height: 100vh;
+    display: flex;
+    align-items: flex-start; /* instead of center */
+    justify-content: center;
+    padding-top: 120px; /* push content down */
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
 
         .hero::before {
             content: '';
@@ -864,8 +880,8 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="/IT-Company-Website-main/Service.html">Services</a></li>
-                <li><a href="/IT-Company-Website-main/About.html">About</a></li>
+                <li><a href="/Service.html">Services</a></li>
+                <li><a href="/About.html">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="mobile-menu">
@@ -1161,9 +1177,11 @@
 
         // Mobile menu toggle (basic implementation)
         document.querySelector('.mobile-menu').addEventListener('click', function() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+          const navLinks = document.querySelector('.nav-links');
+navLinks.classList.toggle('show');
+
         });
+        
 
         // Add typing effect to hero title
         const heroTitle = document.querySelector('.hero h1');
