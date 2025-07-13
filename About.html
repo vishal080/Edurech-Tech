@@ -30,6 +30,25 @@
             box-shadow: 0 2px 20px rgba(0,0,0,0.1);
             animation: slideDown 0.8s ease-out;
         }
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 3px;
+    background: #ff6b35;
+    border-radius: 2px;
+    transition: 0.3s;
+}
 
         .nav-container {
             max-width: 1200px;
@@ -393,78 +412,211 @@
         }
 
         /* Footer */
-        .footer {
-            background: #1a1a1a;
+        .demo-content {
+            padding: 50px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 60px 0 20px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .footer-section h3 {
-            color: #ff6b35;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .footer-section p, .footer-section li {
-            color: #ccc;
-            line-height: 1.6;
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
-            padding: 0.3rem 0;
-        }
-
-        .footer-section a {
-            color: #ccc;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-section a:hover {
-            color: #ff6b35;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .social-links a {
+            min-height: 400px;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: #333;
+            flex-direction: column;
+        }
+
+        .demo-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .demo-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            opacity: 0.9;
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 30px 0 15px;
+            margin-top: auto;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.5;
+        }
+
+        .animated-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .shape {
+            position: absolute;
+            background: rgba(64, 224, 208, 0.1);
             border-radius: 50%;
-            color: white;
-            text-decoration: none;
-            transition: background 0.3s ease;
+            animation: float 6s ease-in-out infinite;
         }
 
-        .social-links a:hover {
-            background: #ff6b35;
+        .shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
         }
 
-        .footer-bottom {
-            border-top: 1px solid #333;
-            padding-top: 2rem;
-            text-align: center;
-            color: #999;
+        .shape:nth-child(2) {
+            width: 60px;
+            height: 60px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
         }
+
+        .shape:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            top: 40%;
+            left: 70%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+       footer {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+    padding: 60px 0 20px;
+    margin-top: 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    color: #ff6b35;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.footer-section p,
+.footer-section li {
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li:hover {
+    color: #ff6b35;
+    cursor: pointer;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0.8;
+}
+
+.contact-info {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.contact-icon {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 0.9rem;
+}
+
+ @media (max-width: 768px) {
+   .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+}
 
         /* Animations */
         @keyframes slideDown {
@@ -571,6 +723,59 @@
             opacity: 1;
             transform: translateY(0);
         }
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    
+    width: 140px;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(6px);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    
+    
+    gap: 1rem;
+
+        top: 70px; /* adjust as per your header height */
+        right: 0;
+        left: 1;
+        padding: 1rem 2rem;
+        z-index: 999;
+}
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        width: 100%;
+    }
+
+    .nav-menu li a {
+        color: white;
+        font-size: 1.2rem;
+        display: block;
+        width: 100%;
+        padding: 0.5rem 0;
+    }
+}
+.contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+        ul li a {
+    color: white;
+    text-decoration: none;
+}
     </style>
 </head>
 <body>
@@ -588,6 +793,11 @@
                     <li><a href="/About.html">About</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
+<button class="menu-toggle" id="menu-toggle">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
             </nav>
         </div>
     </header>
@@ -756,53 +966,72 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer" id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Edurech Technology</h3>
-                    <p>Empowering businesses and careers through innovative technology solutions and professional guidance.</p>
-                    <div class="social-links">
-                        <a href="#" title="Facebook">📘</a>
-                        <a href="#" title="Twitter">🐦</a>
-                        <a href="#" title="LinkedIn">💼</a>
-                        <a href="#" title="Instagram">📷</a>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="/IT-Company-Website-main/index.html">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="/IT-Company-Website-main/Service.html">Services</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="#">Web Development</a></li>
-                        <li><a href="#">Digital Marketing</a></li>
-                        <li><a href="#">Career Guidance</a></li>
-                        <li><a href="#">Cloud Solutions</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Contact Info</h3>
-                    <p>📧 info@edurechtech.com</p>
-                    <p>📱 +1 (555) 123-4567</p>
-                    <p>📍 123 Tech Street, San Francisco, CA 94105</p>
-                </div>
+    
+    <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Edurech Technology</h3>
+                <p>Leading the way in digital transformation, career development, and technology solutions. We empower individuals and businesses to achieve their full potential in the digital age.</p>
+             
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 Edurech Technology. All rights reserved. | Privacy Policy | Terms of Service</p>
+            <div class="footer-section">
+                <h3>Our Services</h3>
+                <ul>
+                    <li>Digital Marketing Solutions</li>
+                    <li>Profile & Personal Branding</li>
+                    <li>Professional Resume Writing</li>
+                    <li>Interview Coaching</li>
+                    <li>Web Development</li>
+                    <li>IT Support & Consulting</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+              <ul>
+     <li><a href="services.html">Services</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="careers.html">Career Opportunities</a></li>
+</ul>
+            </div>
+            <div class="footer-section">
+                <h3>Get In Touch</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <span>info@edurech.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <span>+91 98765 43210</span>
+                    </div>
+                   <div class="contact-item">
+    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+    <span>California US</span>
+</div>
+
+
+
+<div class="contact-item">
+    <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+    <span><a href="https://linkedin.com/company/edurech-technology" target="_blank">LinkedIn</a></span>
+</div>
+
+<div class="contact-item">
+    <div class="contact-icon"><i class="fab fa-instagram"></i></div>
+    <span><a href="https://www.instagram.com/edurechtechnology/" target="_blank">Instagram</a></span>
+</div>
+
+                </div>
             </div>
         </div>
-    </footer>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Edurech Technology. All rights reserved. | Designed with ❤️ for your success</p>
+        </div>
+    </div>
+</footer>
 
     <script>
         // Smooth scrolling for navigation links
@@ -890,6 +1119,14 @@
                 hero.style.transform = `translateY(${scrolled * 0.5}px)`;
             }
         });
+// Mobile Menu Toggle
+const menuToggle = document.getElementById('menu-toggle');
+const navMenu = document.querySelector('.nav-menu');
+
+menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
+
     </script>
 </body>
 </html>
