@@ -1114,36 +1114,20 @@ navLinks.classList.toggle('show');
 
 //Google Sheet
 
- document.getElementById("contact-form").addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  const formData = {
-    user_name: this.user_name.value,
-    user_email: this.user_email.value,
-    user_service: this.user_service.value,
-    message: this.message.value
-  };
-
-  fetch("https://script.google.com/macros/s/AKfycby32a7bHkEMwc_iHwFAGjXSDxFDVrlvGVQiOIEItJw_e53V3O61K5y3_SRF9F2c3E9MHg/exec", {
-    method: "POST",
-    mode: "no-cors", // 🔥 Bypasses CORS restriction
-    body: JSON.stringify(formData),
-    headers: {
-      "Content-Type": "application/json"
-    }
-  })
-  .then(() => {
-    alert("Your message has been sent successfully!");
-    this.reset();
-  })
-  .catch((error) => {
-    console.error("Error!", error);
-    alert("There was an error submitting the form.");
-  });
-});
-
-
-
+ const scriptURL =                       
+      "https://script.google.com/macros/s/AKfycby32a7bHkEMwc_iHwFAGjXSDxFDVrlvGVQiOIEItJw_e53V3O61K5y3_SRF9F2c3E9MHg/exec";
+      const form = document.forms["contact-form"];
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        var formData = new FormData(form);
+        fetch(scriptURL, { method: "POST", body: formData })
+          .then((response) => {
+            swal("Done", "Submitted Successfully.", "success");
+          })
+          .catch((error) => {
+            swal("Error", "Something went wrong. please try again!", "error");
+          });
+      });
 
 //         // Initialize EmailJS
 //   (function() {
