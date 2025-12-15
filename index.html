@@ -746,6 +746,72 @@
             color: white;
             text-decoration: none;
         }
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown > a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    background: rgba(10, 10, 10, 0.98);
+    border: 1px solid rgba(255, 107, 0, 0.2);
+    border-radius: 10px;
+    min-width: 260px;
+    display: none;
+    flex-direction: column;
+    padding: 10px 0;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    z-index: 999;
+}
+
+.dropdown-menu li {
+    list-style: none;
+}
+
+.dropdown-menu a {
+    padding: 10px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.dropdown-menu a:hover {
+    background: linear-gradient(135deg, #ff6b00, #ff9500);
+    color: #ffffff;
+}
+
+/* Show dropdown on hover (desktop) */
+.dropdown:hover .dropdown-menu {
+    display: flex;
+}
+
+/* Mobile behavior */
+@media (max-width: 768px) {
+    .dropdown-menu {
+        position: static;
+        border: none;
+        box-shadow: none;
+        background: transparent;
+    }
+
+    .dropdown-menu a {
+        padding-left: 30px;
+    }
+}
+.dropdown-menu.show {
+    display: flex;
+}
+
 
        
     </style>
@@ -760,9 +826,27 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="/Service.html">Services</a></li>
+             <li class="dropdown">
+    <a href="/Service.html">Services <i class="fas fa-chevron-down"></i></a>
+
+    <div class="dropdown-menu horizontal">
+        <a href="/Service.html">IT Consulting</a>
+        <a  href="/Service.html">Cloud Solutions</a>
+        <a  href="/Service.html">AI & ML</a>
+        <a  href="/Service.html">Software Development</a>
+        <a  href="/Service.html">Web Development</a>
+        <a  href="/Service.html">Mobile Apps</a>
+        <a  href="/Service.html">Data Engineering</a>
+        <a  href="/Service.html">DevOps</a>
+        <a  href="/Service.html">Cybersecurity</a>
+        <a  href="/Service.html">Resume & Profile</a>
+    </div>
+</li>
+
+
                 <li><a href="/About.html">About</a></li>
                 <li><a href="#contact">Contact</a></li>
+                 
             </ul>
             <div class="mobile-menu">
                 <span></span>
@@ -1146,6 +1230,14 @@ navLinks.classList.toggle('show');
   });
 });
 
+document.querySelectorAll('.dropdown > a').forEach(item => {
+    item.addEventListener('click', function (e) {
+        if (window.innerWidth <= 768) {
+            e.preventDefault();
+            this.nextElementSibling.classList.toggle('show');
+        }
+    });
+});
 
 
 
