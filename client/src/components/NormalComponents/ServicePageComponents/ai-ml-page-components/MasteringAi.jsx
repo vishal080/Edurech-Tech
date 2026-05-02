@@ -43,7 +43,7 @@ const MasteringAi = () => {
                 </div>
             </div>
         </section>
-    );
-};
+    )
+}
 
-export default MasteringAi;
+export default MasteringAi

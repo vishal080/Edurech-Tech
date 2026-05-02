@@ -3,9 +3,8 @@ import { useNavigate } from "react-router-dom";
 
 const AiMlHero = () => {
   const navigate = useNavigate();
-
   return (
-    <section className="min-h-screen flex items-center bg-gradient-to-br from-[#020617] via-[#020617] to-[#0f172a] px-6 pb-8 md:pt-6 md:px-16">
+     <section className="min-h-screen flex items-center bg-gradient-to-br from-[#020617] via-[#020617] to-[#0f172a] px-6 pb-8 md:pt-6 md:px-16">
       <div className="max-w-[1250px] mx-auto w-full grid md:grid-cols-2 gap-6  items-center">
 
         {/* LEFT CONTENT */}
@@ -65,7 +64,7 @@ const AiMlHero = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default AiMlHero;
+export default AiMlHero

@@ -1,7 +1,7 @@
-import AiMlHero from "../../components/NormalComponents/ServicePageComponents/ai-ml/AiMlHero"
-import MasteringAi from "../../components/NormalComponents/ServicePageComponents/ai-ml/MasteringAi"
-import StrategicImpact from "../../components/NormalComponents/ServicePageComponents/ai-ml/StrategicImpact"
-import AiMlTechTools from "../../components/NormalComponents/ServicePageComponents/ai-ml/AiMlTechTools"
+import AiMlHero from "../../components/NormalComponents/ServicePageComponents/ai-ml-page-components/AiMlHero"
+import AiMlTechTools from "../../components/NormalComponents/ServicePageComponents/ai-ml-page-components/AiMlTechTools"
+import MasteringAi from "../../components/NormalComponents/ServicePageComponents/ai-ml-page-components/MasteringAi"
+import StrategicImpact from "../../components/NormalComponents/ServicePageComponents/ai-ml-page-components/StrategicImpact"
 import CTA from "../../components/NormalComponents/ServicePageComponents/CTA"
 
 const AIMLServices = () => {

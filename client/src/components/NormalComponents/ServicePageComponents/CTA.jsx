@@ -1,8 +1,9 @@
 import { useNavigate } from "react-router-dom";
 
+import React from 'react'
+
 const CTA = () => {
   const navigate = useNavigate();
-
   return (
     <section className="px-6 max-w-[1250px] mx-auto md:pt-20 md:pb-20 pt-6 pb-6 md:px-16">
 
@@ -40,7 +41,7 @@ const CTA = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default CTA;
+export default CTA

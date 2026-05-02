@@ -17,7 +17,6 @@ const StrategicImpact = () => {
             desc: "Deploy systems that learn and improve as your data volume grows over time.",
         },
     ];
-
     return (
         <section className="bg-[#020C1B] px-6 md:px-16 pb-8 md:py-24">
             <div className="max-w-[1250px] mx-auto grid lg:grid-cols-2 gap-8 md:gap-16 items-start">
@@ -60,7 +59,7 @@ const StrategicImpact = () => {
                 </div>
             </div>
         </section>
-    );
-};
+    )
+}
 
-export default StrategicImpact;
+export default StrategicImpact

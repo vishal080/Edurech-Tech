@@ -10,17 +10,17 @@ const AiMlTechTools = () => {
         { title: "Pandas", icon: Database },
         { title: "NVIDIA CUDA", icon: Layers },
     ];
-
     return (
         <div>
-            <Toolbox
-                title="Our Technology Toolbox"
-                subtitle="We use industry-leading tools to ensure your website is modern, scalable, and powerful."
-                tools={tools} 
-            />
+            <div>
+                <Toolbox
+                    title="Our Technology Toolbox"
+                    subtitle="We use industry-leading tools to ensure your website is modern, scalable, and powerful."
+                    tools={tools}
+                />
+            </div>
         </div>
+    )
+}
 
-    );
-};
-
-export default AiMlTechTools;
+export default AiMlTechTools
