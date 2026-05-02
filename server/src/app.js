@@ -23,7 +23,10 @@ app.use(express.json());
 
 // cors
 app.use(cors({
-    origin: "http://localhost:5173", // Replace with your frontend URL
+    origin: [
+        "https://edurechtech.com",
+        "http://localhost:5173"
+    ],
     credentials: true, // Allow cookies to be sent
 }))
 
