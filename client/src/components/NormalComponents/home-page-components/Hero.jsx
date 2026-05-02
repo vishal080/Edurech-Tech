@@ -65,7 +65,7 @@ animate-[slideInUp_1s_ease-out]">
         animate-[slideInUp_1s_ease-out_0.4s_both]">
 
           <Link
-            to="/contact-page"
+            to="/career-page"
             className="px-[30px] py-[12px] rounded-full font-bold text-white
     bg-gradient-to-br from-[#ff6b00] to-[#ff9500]
     transition-all duration-300
