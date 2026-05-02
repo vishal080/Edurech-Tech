@@ -1,10 +1,4 @@
-
 import jwt from "jsonwebtoken";
-
-/*
-Controller function to handle admin login
-POST /api/admin/login
-*/
 
 const adminLogin = async (req, res) => {
 
@@ -37,11 +31,18 @@ const adminLogin = async (req, res) => {
             { expiresIn: process.env.JWT_EXPIRE }
         );
 
-        // store token in cookie
+        // // store token in cookie
+        // res.cookie("token", token, {
+        //     httpOnly: true,
+        //     secure: false,
+        //     sameSite: "strict",
+        //     maxAge: 24 * 60 * 60 * 1000
+        // });
+
         res.cookie("token", token, {
             httpOnly: true,
-            secure: false,
-            sameSite: "strict",
+            secure: true,
+            sameSite: "None",
             maxAge: 24 * 60 * 60 * 1000
         });
 
@@ -63,10 +64,16 @@ const adminLogin = async (req, res) => {
 
 const adminLogout = async (req, res) => {
     try {
+        // res.clearCookie("token", {
+        //     httpOnly: true,
+        //     sameSite: "strict",
+        //     secure: false
+        // });
+
         res.clearCookie("token", {
             httpOnly: true,
-            sameSite: "strict",
-            secure: false
+            secure: true,
+            sameSite: "None"
         });
 
         return res.status(200).json({
