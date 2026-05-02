@@ -1,7 +1,7 @@
-import DigitalHero from '../../components/NormalComponents/ServicePageComponents/digital-marketing/Digital-Hero'
-import CorePerformance from '../../components/NormalComponents/ServicePageComponents/digital-marketing/CorePerformance'
-import StrategicYields from '../../components/NormalComponents/ServicePageComponents/digital-marketing/StrategicYields'
-import MarketingStack from '../../components/NormalComponents/ServicePageComponents/digital-marketing/MarketingStack'
+import DigitalHero from "../../components/NormalComponents/ServicePageComponents/digital-services-page-components/DigitalHero"
+import CorePerformance from "../../components/NormalComponents/ServicePageComponents/digital-services-page-components/CorePerformance"
+import StrategicYields from "../../components/NormalComponents/ServicePageComponents/digital-services-page-components/StrategicYields"
+import MarketingStack from "../../components/NormalComponents/ServicePageComponents/digital-services-page-components/MarketingStack"
 import CTA from "../../components/NormalComponents/ServicePageComponents/CTA"
 
 const DegitalServices = () => {
