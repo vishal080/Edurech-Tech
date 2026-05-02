@@ -24,7 +24,7 @@ app.use(express.json());
 // cors
 app.use(cors({
     origin: [
-        // "https://edurechtech.com",
+        "https://edurechtech.com",
         "https://www.edurechtech.com",
         "http://localhost:5173"
     ],
